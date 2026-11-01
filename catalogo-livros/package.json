@@ -1,0 +1,12 @@
+{
+  "name": "minha-estante",
+  "version": "1.0.0",
+  "description": "Catálogo interativo de livros feito com HTML, CSS e TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

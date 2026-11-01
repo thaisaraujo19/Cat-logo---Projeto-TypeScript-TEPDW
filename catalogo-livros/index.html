@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha estante</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="dist/main.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <h1>Minha estante</h1>
+    <p>Organize os livros que você quer ler, está lendo e já leu.</p>
+  </header>
+
+  <section class="resumo" aria-label="Resumo do catálogo">
+    <div class="resumo-total">
+      <strong id="resumo-total">0</strong>
+      <span>livros no total</span>
+    </div>
+    <div class="resumo-item" data-status="quero-ler">
+      <strong id="resumo-quero-ler">0</strong>
+      <span>Quero ler</span>
+    </div>
+    <div class="resumo-item" data-status="lendo">
+      <strong id="resumo-lendo">0</strong>
+      <span>Lendo</span>
+    </div>
+    <div class="resumo-item" data-status="lido">
+      <strong id="resumo-lido">0</strong>
+      <span>Lido</span>
+    </div>
+  </section>
+
+  <main class="conteudo">
+    <form id="form-livro" class="painel" novalidate>
+      <h2>Novo livro</h2>
+
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" autocomplete="off">
+
+      <label for="categoria">Categoria</label>
+      <select id="categoria">
+        <option value="">Selecione...</option>
+      </select>
+
+      <label for="ano">Ano de publicação</label>
+      <input type="number" id="ano" placeholder="Ex.: 1996">
+
+      <label for="status">Status</label>
+      <select id="status"></select>
+
+      <p id="erro" class="erro" role="alert" hidden></p>
+
+      <button type="submit">Adicionar livro</button>
+    </form>
+
+    <section class="catalogo" aria-label="Catálogo">
+      <div class="ferramentas">
+        <input type="search" id="busca" placeholder="Buscar pelo título" aria-label="Buscar pelo título">
+        <select id="filtro-categoria" aria-label="Filtrar por categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+        <span id="contagem" class="contagem"></span>
+      </div>
+
+      <ul id="lista" class="lista"></ul>
+      <p id="vazio" class="vazio" hidden></p>
+    </section>
+  </main>
+</body>
+</html>

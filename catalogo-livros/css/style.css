@@ -1,0 +1,208 @@
+:root {
+  --fundo: #e8edeb;
+  --papel: #fbfcfb;
+  --tinta: #1c2b33;
+  --suave: #5d6f78;
+  --linha: #c5d0cd;
+  --acento: #234e70;
+  --erro: #a32929;
+
+  --quero-ler: #c28a1e;
+  --lendo: #2f7f9a;
+  --lido: #5a8a4a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 3rem;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.topo, .resumo, .conteudo {
+  max-width: 62rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3 {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  margin: 0;
+}
+
+.topo h1 { font-size: 2.6rem; line-height: 1.1; }
+.topo p { margin: 0.4rem 0 0; color: var(--suave); }
+
+/* ---------- resumo ---------- */
+
+.resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.resumo-total, .resumo-item {
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.resumo strong {
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.resumo-total { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+.resumo-total strong { font-size: 2.2rem; }
+
+.resumo-item { border-left-width: 6px; border-left-color: var(--cor); }
+
+[data-status="quero-ler"] { --cor: var(--quero-ler); }
+[data-status="lendo"] { --cor: var(--lendo); }
+[data-status="lido"] { --cor: var(--lido); }
+
+/* ---------- layout principal ---------- */
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 19rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.painel {
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  padding: 1.25rem;
+}
+
+.painel h2 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+
+label {
+  display: block;
+  margin: 0.9rem 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #9fb0ab;
+  border-radius: 3px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.painel button {
+  width: 100%;
+  margin-top: 1.1rem;
+  padding: 0.65rem;
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.painel button:hover { background: #1b3d57; }
+
+:focus-visible {
+  outline: 3px solid #e0a82e;
+  outline-offset: 2px;
+}
+
+.erro {
+  margin: 0.9rem 0 0;
+  padding: 0.5rem 0.7rem;
+  border-left: 4px solid var(--erro);
+  background: #f7e4e4;
+  color: var(--erro);
+  font-size: 0.9rem;
+}
+
+/* ---------- catálogo ---------- */
+
+.ferramentas {
+  display: grid;
+  grid-template-columns: 1fr 13rem;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.contagem {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.lista {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* a faixa colorida na lateral funciona como a lombada do livro */
+.livro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-left: 10px solid var(--cor);
+  padding: 0.8rem 1rem;
+}
+
+.livro h3 { font-size: 1.15rem; }
+
+.detalhes {
+  display: flex;
+  gap: 0.9rem;
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: var(--suave);
+}
+
+.acoes { display: flex; gap: 0.5rem; align-items: center; }
+.acoes select { width: auto; }
+
+.excluir {
+  padding: 0.45rem 0.8rem;
+  background: transparent;
+  color: var(--erro);
+  border: 1px solid var(--erro);
+  border-radius: 3px;
+}
+.excluir:hover { background: var(--erro); color: #fff; }
+
+.vazio {
+  margin: 0.75rem 0 0;
+  padding: 1.5rem 1rem;
+  border: 1px dashed #9fb0ab;
+  color: var(--suave);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .conteudo { grid-template-columns: 1fr; }
+  .topo h1 { font-size: 2rem; }
+  .ferramentas { grid-template-columns: 1fr; }
+}
