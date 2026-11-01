@@ -3,7 +3,7 @@
 Catálogo interativo de livros feito para a disciplina **Tópicos Especiais em Projeto e Desenvolvimento Web (TEPDW)**.
 
 **Autor(es):** Thaís Araújo de Paiva
-**Vídeo de apresentação:** [](https://drive.google.com/drive/folders/1gP2n4vldkttU6U97oKmsPAaK12oBBKy4?usp=sharing)
+**Vídeo de apresentação:** [(https://drive.google.com/drive/folders/1gP2n4vldkttU6U97oKmsPAaK12oBBKy4?usp=sharing)]
 
 ## Objetivo
 
